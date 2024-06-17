@@ -21,9 +21,8 @@ public class UserServiceImpl implements UserServiceI {
 
     @Override
     public User updateUser(User user, Long userId) {
-        User existingUser = userRepository.findById(userId).orElseThrow(() ->
-                new RuntimeException("Resource not found on server with ID: " + userId)
-        );
+        User existingUser = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Resource not found on server with ID: " + userId));
 
         existingUser.setUserName(user.getUserName());
         existingUser.setUserAge(user.getUserAge());
@@ -39,18 +38,19 @@ public class UserServiceImpl implements UserServiceI {
 
     @Override
     public List<User> getAllUser() {
-        return null;
-    }
-
-    @Override
-    public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
     @Override
+    public List<User> getAllUsers() {
+//        return userRepository.findAll();
+    }
+
+    @Override
     public void deleteUser(Long userId) {
-//        User user = userRepository.findById(userId)
-//                .orElseThrow(() -> new RuntimeException("Resource not found on server with ID: " + userId));
-//        userRepository.delete(user);
+        // Method is commented out, but following is the implementation:
+        // User user = userRepository.findById(userId)
+        //         .orElseThrow(() -> new RuntimeException("Resource not found on server with ID: " + userId));
+        // userRepository.delete(user);
     }
 }
