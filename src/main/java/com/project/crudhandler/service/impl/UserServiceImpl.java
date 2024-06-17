@@ -12,11 +12,12 @@ public class UserServiceImpl implements UserServiceI {
     @Autowired
     private UserRepository userRepository;
 
-
-
     @Override
     public User createUser(User user) {
-        return null;
+
+        User saveuser = userRepository.save(user);
+
+        return saveuser;
     }
 
     @Override
