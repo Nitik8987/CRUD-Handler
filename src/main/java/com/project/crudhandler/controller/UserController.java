@@ -28,4 +28,9 @@ public class UserController {
         User updatedUser = userServiceI.updateUser(user, userId);
         return new ResponseEntity<>(updatedUser, HttpStatus.CREATED);
     }
+    @DeleteMapping("/users/{userId}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long userId) {
+        userServiceI.deleteUser(userId);
+        return new ResponseEntity<>("Resource Deleted Successfully !!",HttpStatus.OK);
+    }
 }
