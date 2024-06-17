@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserServiceI {
 
     @Override
     public List<User> getAllUsers() {
-//        return userRepository.findAll();
+        return userRepository.findAll();
     }
 
     @Override
