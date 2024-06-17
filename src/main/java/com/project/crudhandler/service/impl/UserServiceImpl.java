@@ -22,13 +22,13 @@ public class UserServiceImpl implements UserServiceI {
     @Override
     public User updateUser(User user, Long userId) {
         User existingUser = userRepository.findById(userId).orElseThrow(() ->
-//                new RuntimeException("Resource not found on server with ID: " + userId)
-//        );
-//
-//        existingUser.setUserName(user.getUserName());
-//        existingUser.setUserAge(user.getUserAge());
-//        existingUser.setAbout(user.getAbout());
-//        return userRepository.save(existingUser);
+                new RuntimeException("Resource not found on server with ID: " + userId)
+        );
+
+        existingUser.setUserName(user.getUserName());
+        existingUser.setUserAge(user.getUserAge());
+        existingUser.setAbout(user.getAbout());
+        return userRepository.save(existingUser);
     }
 
     @Override
